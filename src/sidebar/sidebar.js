@@ -7,6 +7,7 @@ import SidebarItemComponent from "../sidebarItem/sidebaritem";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Fade from "@material-ui/core/Fade";
 import ListSubheader from "@material-ui/core/ListSubheader";
+import TextField from "@material-ui/core/TextField";
 
 class SidebarComponent extends React.Component {
     constructor() {
@@ -27,7 +28,7 @@ class SidebarComponent extends React.Component {
                     <Jumbotron style={{ height: 250 }}>
                         <h1>Benvenuto su Mynotes!</h1>
                         <p>
-                            Mynotes ti aiuta a catturare e a ordinare idee, progetti e liste di cose da fare: non ti sfuggirà più nulla. Per iniziare premi "Nuova Nota".
+                            Mynotes ti aiuta a catturare e a ordinare idee, progetti e liste di cose da fare: non ti sfuggirà più nulla. Per iniziare premi "Nuova Nota" oppure selezionane una per modificarla.
                         </p>
                         <p>
                             <Button
@@ -41,16 +42,14 @@ class SidebarComponent extends React.Component {
 
                     {
                         this.state.addingNote ?
-                            <div>
-                                <input type='text'
-                                       className={classes.newNoteInput}
-                                       placeholder='Inserisci un titolo'
-                                       onKeyUp={(e) => this.updateTitle(e.target.value)}>
-                                </input>
+                            <form className={classes.container} noValidate>
+                                <TextField className={classes.textField} placeholder='Inserisci un titolo'
+                                           onKeyUp={(e) => this.updateTitle(e.target.value)}>
+                                </TextField>
                                 <Button
                                     className={classes.newNoteSubmitBtn}
                                     onClick={this.newNote}>Aggiungi Nota</Button>
-                            </div> :
+                            </form> :
                             null
                     }
                     <List component="nav" aria-labelledby="nested-list-subheader" subheader={

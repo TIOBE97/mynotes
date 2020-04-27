@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import styles from "./styles";
 
-class NavbarComponentIn extends React.Component {
+class NavbarComponentOut extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -24,7 +24,7 @@ class NavbarComponentIn extends React.Component {
                         <Typography  variant="h6" className={classes.title}>
                             Mynotes
                         </Typography>
-                        <Button onClick={this.loggedIn} href='/login'  color="inherit">Login</Button>
+                        <Button onClick={this.loggedIn} href='/'  color="inherit">Logout</Button>
 
 
                     </Toolbar>
@@ -34,9 +34,9 @@ class NavbarComponentIn extends React.Component {
     }
 
     loggedIn = () => {
-       this.setState({logged: !this.state.logged}) ;
+        this.setState({logged: !this.state.logged}) ;
     }
 }
 
 
-export default withStyles(styles)(NavbarComponentIn) ;
+export default withStyles(styles)(NavbarComponentOut) ;

@@ -4,6 +4,7 @@ import debounce from '../helpers';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
+import 'react-quill/dist/quill.snow.css';
 
 class EditorComponent extends React.Component {
     constructor() {
@@ -46,13 +47,14 @@ class EditorComponent extends React.Component {
                     value={this.state.title ? this.state.title : ''}
                     onChange={(e) => this.updateTitle(e.target.value)}>
                 </input>
-                <ReactQuill
+                <ReactQuill theme="snow"
                     value={this.state.text}
                     onChange={this.updateBody}>
                 </ReactQuill>
             </div>
         );
     }
+
     updateBody = async (val) => {
         await this.setState({ text: val });
         this.update();

@@ -1,14 +1,13 @@
 import React from "react";
-import NavbarComponent from "../Navbar/navbar";
-
-
+import NavbarComponentIn from "../Navbar/navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Divider from "@material-ui/core/Divider";
 class homepageComponent extends React.Component{
     render() {
         return(
 
              <div>
-                <NavbarComponent/>
-                Hello from the homepage
+                 <NavbarComponentIn/>
              </div>
 
         );

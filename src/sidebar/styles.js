@@ -1,27 +1,18 @@
 const styles = theme => ({
     root: {
+        width: '100%',
+        maxWidth: 360,
         backgroundColor: theme.palette.background.paper,
-        height: 'calc(100% - 35px)',
-        position: 'absolute',
-        left: '0',
-        width: '300px',
-        boxShadow: '0px 0px 2px black'
     },
-    newChatBtn: {
-        borderRadius: '0px'
-    },
-    unreadMessage: {
-        color: 'red',
-        position: 'absolute',
-        top: '0',
-        right: '5px'
+    nested: {
+        paddingLeft: theme.spacing(4),
     },
     newNoteBtn: {
-        width: '100%',
-        height: '50px',
+        width: '18%',
+        height: '10%',
         borderBottom: '1px solid black',
         borderRadius: '0px',
-        backgroundColor: '#3f527d',
+        backgroundColor: '#09197d',
         color: 'white',
         '&:hover': {
             backgroundColor: '#88a2ce'
@@ -30,11 +21,9 @@ const styles = theme => ({
     sidebarContainer: {
         marginTop: '0px',
         width: '300px',
-        height: '1000px',
+        height: '100%',
         boxSizing: 'border-box',
-        float: 'left',
-        overflowY: 'scroll',
-        overflowX: 'hidden'
+        float: 'left'
     },
     newNoteInput: {
         width: '100%',
@@ -52,6 +41,10 @@ const styles = theme => ({
         backgroundColor: '#28787c',
         borderRadius: '0px',
         color: 'white'
+    },
+    jumbotroncontainer: {
+        height: '23%',
+
     }
 });
 

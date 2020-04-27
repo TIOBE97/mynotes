@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import loginComponent from "./Login/login";
 import signupComponent from "./Signup/signup";
 import dashboardComponent from "./Dashboard/dashboard";
-import {Route, BrowserRouter as Router} from "react-router-dom";
+import {Route, BrowserRouter as Router} from 'react-router-dom';
 import homepageComponent from "./Homepage/homepage";
 
 

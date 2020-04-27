@@ -1,8 +1,11 @@
 import React from 'react';
 import SidebarComponent from "../sidebar/sidebar";
 import EditorComponent from "../editor/editor";
+import styles from "./styles";
 import './styles.css';
 import './logo.svg';
+
+import NavbarComponentOut from "../Navbar/navbarout";
 
 const firebase = require('firebase');
 
@@ -17,29 +20,40 @@ class dashboardComponent extends React.Component {
         };
     }
 
+
     render() {
-        return(
-            <div className="app-container">
-                <SidebarComponent history={this.props.history}
-                    selectedNoteIndex={this.state.selectedNoteIndex}
-                    notes={this.state.notes}
-                    deleteNote={this.deleteNote}
-                    selectNote={this.selectNote}
-                    newNote={this.newNote}></SidebarComponent>
+
+        const { notes, classes, selectedNoteIndex } = this.props;
 
 
-                {
-                    this.state.selectedNote ?
-                        <EditorComponent selectedNote={this.state.selectedNote}
-                                         selectedNoteIndex={this.state.selectedNoteIndex}
-                                         notes={this.state.notes}
-                                         noteUpdate={this.noteUpdate}></EditorComponent> :
-                        <div>
-                            <img src=""/>
-                        </div>
-                }
-            </div>
-        );
+            return(
+                <div className="app-container">
+                    <NavbarComponentOut></NavbarComponentOut>
+                    <SidebarComponent history={this.props.history}
+                                      selectedNoteIndex={this.state.selectedNoteIndex}
+                                      notes={this.state.notes}
+                                      deleteNote={this.deleteNote}
+                                      selectNote={this.selectNote}
+                                      newNote={this.newNote}></SidebarComponent>
+
+
+                    {
+
+                        this.state.selectedNote ?
+
+
+                            <EditorComponent selectedNote={this.state.selectedNote}
+                                             selectedNoteIndex={this.state.selectedNoteIndex}
+                                             notes={this.state.notes}
+                                             noteUpdate={this.noteUpdate}></EditorComponent> :
+                            <div>
+
+                            </div>
+
+                    }
+                </div>
+            );
+
     }
 
     componentDidMount = () => {
@@ -94,7 +108,7 @@ class dashboardComponent extends React.Component {
         await this.setState({ notes: [...this.state.notes, note] });
         const newNoteIndex = this.state.notes.indexOf(this.state.notes.filter(_note => _note.id === newID)[0]);
         this.setState({ selectedNote: this.state.notes[newNoteIndex], selectedNoteIndex: newNoteIndex });
-    }
+    };
     deleteNote = async (note) => {
         const noteIndex = this.state.notes.indexOf(note);
         await this.setState({ notes: this.state.notes.filter(_note => _note !== note) });
