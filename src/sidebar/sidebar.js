@@ -4,6 +4,9 @@ import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider, Button } from '@material-ui/core';
 import SidebarItemComponent from "../sidebarItem/sidebaritem";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Fade from "@material-ui/core/Fade";
+import ListSubheader from "@material-ui/core/ListSubheader";
 
 class SidebarComponent extends React.Component {
     constructor() {
@@ -19,10 +22,23 @@ class SidebarComponent extends React.Component {
 
         if(notes) {
             return(
+                <div>
+                    <Fade in='checked'>
+                    <Jumbotron style={{ height: 250 }}>
+                        <h1>Benvenuto su Mynotes!</h1>
+                        <p>
+                            Mynotes ti aiuta a catturare e a ordinare idee, progetti e liste di cose da fare: non ti sfuggirà più nulla. Per iniziare premi "Nuova Nota".
+                        </p>
+                        <p>
+                            <Button
+                                onClick={this.newNoteBtnClick}
+                                className={classes.newNoteBtn}>{this.state.addingNote ? 'Cancella' : 'Nuova Nota'}</Button>
+                        </p>
+                    </Jumbotron>
+                    </Fade>
+
                 <div className={classes.sidebarContainer}>
-                    <Button
-                        onClick={this.newNoteBtnClick}
-                        className={classes.newNoteBtn}>{this.state.addingNote ? 'Cancella' : 'Nuova Nota'}</Button>
+
                     {
                         this.state.addingNote ?
                             <div>
@@ -37,7 +53,11 @@ class SidebarComponent extends React.Component {
                             </div> :
                             null
                     }
-                    <List className={classes.sidebarContainer}>
+                    <List component="nav" aria-labelledby="nested-list-subheader" subheader={
+                        <ListSubheader component="div" id="nested-list-subheader">
+                            <h5>Le tue note:</h5>
+                        </ListSubheader>
+                    } className={classes.root}>
                         {
                             notes.map((_note, _index) => {
                                 return(
@@ -55,6 +75,7 @@ class SidebarComponent extends React.Component {
                             })
                         }
                     </List>
+                </div>
                 </div>
             );
         } else {
