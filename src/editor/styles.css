@@ -45,3 +45,6 @@ html, body {
     left: calc(50% - 165px);
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #d4d8e8;
+}

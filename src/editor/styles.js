@@ -19,9 +19,9 @@ const styles = theme => ({
         paddingLeft: '50px'
     },
     editIcon: {
-        position: 'absolute',
-        left: '352px',
-        top: '155px',
+        position: 'fixed',
+        left: '22.5vw',
+        top: '21.5vh',
         color: 'white',
         width: '10',
         height: '10'

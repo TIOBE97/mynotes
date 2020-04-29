@@ -4,20 +4,9 @@ import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
 import SidebarItemComponent from "../sidebarItem/sidebaritem";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Fade from "@material-ui/core/Fade";
-import ListSubheader from "@material-ui/core/ListSubheader";
-import TextField from "@material-ui/core/TextField";
 import 'antd/dist/antd.css';
 import './styles.css';
 import { Layout, Menu, Breadcrumb, Button } from 'antd';
-import {
-    DesktopOutlined,
-    PieChartOutlined,
-    FileOutlined,
-    TeamOutlined,
-    UserOutlined,
-} from '@ant-design/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -31,12 +20,8 @@ class SidebarComponent extends React.Component {
             collapsed: false,
         };
     }
-    onCollapse = collapsed => {
-        console.log(collapsed);
-        this.setState({ collapsed });
-    };
     render() {
-        const { Header, Content, Footer, Sider } = Layout;
+        const {  Sider } = Layout;
         const { notes, classes, selectedNoteIndex } = this.props;
 
         if(notes) {
@@ -116,19 +101,6 @@ export default withStyles(styles)(SidebarComponent);
 
 
 
-/*<Layout className="site-layout">
-    <Header className="site-layout-background" style={{ padding: 0 }} />
-    <Content style={{ margin: '0 16px' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-        </Breadcrumb>
-        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            Bill is a cat.
-        </div>
-    </Content>
-    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-</Layout>*/  //layout per inserire l'editor component
 
 
 

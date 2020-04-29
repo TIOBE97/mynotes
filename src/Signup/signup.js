@@ -37,15 +37,15 @@ class SignupComponent extends React.Component {
                     <form onSubmit={(e) => this.submitSignup(e)} className={classes.form}>
                         <FormControl required fullWidth margin='normal'>
                             <InputLabel htmlFor='signup-email-input'>Inserisci la tua Email</InputLabel>
-                            <Input autoComplete='email' autoFocus onChange={(e) => this.userTyping('email', e)} id='signup-email-input'></Input>
+                            <Input autoComplete='email' autoFocus onChange={(e) => this.userTyping('email', e)} id='signup-email-input'/>
                         </FormControl>
                         <FormControl required fullWidth margin='normal'>
                             <InputLabel htmlFor='signup-password-input'>Crea una Password</InputLabel>
-                            <Input type="password" onChange={(e) => this.userTyping('password', e)} id='signup-password-input'></Input>
+                            <Input type="password" onChange={(e) => this.userTyping('password', e)} id='signup-password-input'/>
                         </FormControl>
                         <FormControl required fullWidth margin='normal'>
                             <InputLabel htmlFor='signup-password-confirmation-input'>Conferma la tua Password</InputLabel>
-                            <Input type="password" onChange={(e) => this.userTyping('passwordConfirmation', e)} id='signup-password-confirmation-input'></Input>
+                            <Input type="password" onChange={(e) => this.userTyping('passwordConfirmation', e)} id='signup-password-confirmation-input'/>
                         </FormControl>
                         <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>Iscriviti</Button>
                     </form>

@@ -7,7 +7,7 @@ import styles from './styles';
 import 'react-quill/dist/quill.snow.css';
 import 'antd/dist/antd.css';
 import './styles.css';
-import {Layout, Menu, Breadcrumb} from 'antd';
+import {Layout,  Breadcrumb} from 'antd';
 
 const { Content} = Layout;
 
@@ -39,6 +39,21 @@ class EditorComponent extends React.Component {
             });
         }
     }
+    modules = {
+        toolbar: [
+            [{ 'header': [1, 2, false] }],
+            ['bold', 'italic', 'underline','strike', 'blockquote'],
+            [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+            ['image']
+        ],
+    }
+
+    formats = [
+        'header',
+        'bold', 'italic', 'underline', 'strike', 'blockquote',
+        'list', 'bullet', 'indent',
+        'link', 'image'
+    ];
 
     render() {
 
@@ -50,10 +65,10 @@ class EditorComponent extends React.Component {
                     <Layout className="site-layout">
                         <Content style={{margin: '0 16px'}}>
                             <Breadcrumb style={{margin: '16px 0'}}>
-                                <Breadcrumb.Item>Editor della nota:</Breadcrumb.Item>
+                                <Breadcrumb.Item> Editor della nota:</Breadcrumb.Item>
                             </Breadcrumb>
                             <div className="site-layout-background" style={{padding: 24, minHeight: 500}}>
-                                <BorderColorIcon className={classes.editIcon}></BorderColorIcon>
+                                <BorderColorIcon className={classes.editIcon}/>
                                 <input
                                     className={classes.titleInput}
                                     placeholder='Titolo...'
@@ -61,6 +76,9 @@ class EditorComponent extends React.Component {
                                     onChange={(e) => this.updateTitle(e.target.value)}>
                                 </input>
                                 <ReactQuill theme="snow" style={{overflowY: 'hidden'}}
+                                            modules={this.modules}
+                                            formats={this.formats}
+                                            placeholder='Inserisci un testo...'
                                             value={this.state.text}
                                             onChange={this.updateBody}>
                                 </ReactQuill>

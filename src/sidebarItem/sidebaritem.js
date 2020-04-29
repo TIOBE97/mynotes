@@ -34,12 +34,13 @@ class SidebarItemComponent extends React.Component {
     }
     selectNote = (n, i) => this.props.selectNote(n, i);
     deleteNote = (note) => {
-        if(window.confirm(`Sei sicuro di voler cancellare: ${note.title}`)) {
+        if(note.title == null) {
+            if(window.confirm(`Sei sicuro di voler cancellare questa nota?`)) {
+                this.props.deleteNote(note);
+            }
+        } else if(window.confirm(`Sei sicuro di voler cancellare: ${note.title}`)) {
             this.props.deleteNote(note);
         }
-    }
-    changeColor = (a) => {
-        return a.fontcolor("red")
     }
 
 
