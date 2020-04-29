@@ -5,19 +5,9 @@ import styles from "./styles";
 import '../editor/styles.css';
 import 'antd/dist/antd.css';
 import '../editor/styles.css';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import {
-    DesktopOutlined,
-    PieChartOutlined,
-    FileOutlined,
-    TeamOutlined,
-    UserOutlined,
-} from '@ant-design/icons';
+
+
 import NavbarComponentOut from "../Navbar/navbarout";
-
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
-
 
 
 const firebase = require('firebase');

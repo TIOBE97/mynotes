@@ -12,8 +12,9 @@ const styles = theme => ({
         boxSizing: 'border-box',
         border: 'none',
         fontSize: '24px',
+        font: '#ffffff',
         width: '100%',
-        backgroundColor: '#3f527d',
+        backgroundColor: '#008394',
         color: 'white',
         paddingLeft: '50px'
     },

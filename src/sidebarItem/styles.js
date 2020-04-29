@@ -1,10 +1,11 @@
 const styles = theme => ({
     listItem: {
-        cursor: 'pointer'
+        cursor: 'pointer',
     },
     textSection: {
         maxWidth: '85%',
-        color: 'white'
+        color: '#33c9dc',
+
     },
     deleteIcon: {
         position: 'absolute',
@@ -13,6 +14,10 @@ const styles = theme => ({
         '&:hover': {
             color: 'red'
         }
+    },
+
+    secondaryText : {
+      color: '#ffffff'
     }
 });
 

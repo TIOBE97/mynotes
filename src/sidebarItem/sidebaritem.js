@@ -21,9 +21,10 @@ class SidebarItemComponent extends React.Component {
                     <div
                         className={classes.textSection}
                         onClick={() => this.selectNote(_note, _index)}>
-                        <ListItemText
+                        <ListItemText classes={{secondary: classes.secondaryText}}
                             primary={_note.title}
-                            secondary={removeHTMLTags(_note.body.substring(0, 30)) + '...'}></ListItemText>
+                            secondary={ removeHTMLTags(_note.body.substring(0, 30)) + '...'
+                                 }></ListItemText>
                     </div>
                     <DeleteIcon onClick={() => this.deleteNote(_note)}
                                 className={classes.deleteIcon}></DeleteIcon>
@@ -37,6 +38,11 @@ class SidebarItemComponent extends React.Component {
             this.props.deleteNote(note);
         }
     }
+    changeColor = (a) => {
+        return a.fontcolor("red")
+    }
+
+
 
 }
 

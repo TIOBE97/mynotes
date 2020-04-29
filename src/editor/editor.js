@@ -46,7 +46,7 @@ class EditorComponent extends React.Component {
 
         return (
             <div>
-                <Layout style={{minHeight: '100vh'}}>
+                <Layout style={{minHeight: '100vh', marginLeft: '19vw'}}>
                     <Layout className="site-layout">
                         <Content style={{margin: '0 16px'}}>
                             <Breadcrumb style={{margin: '16px 0'}}>

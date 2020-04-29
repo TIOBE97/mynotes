@@ -36,17 +36,17 @@ class SidebarComponent extends React.Component {
         this.setState({ collapsed });
     };
     render() {
-
+        const { Header, Content, Footer, Sider } = Layout;
         const { notes, classes, selectedNoteIndex } = this.props;
 
         if(notes) {
             return(
                 <div className={classes.sidebarContainer}>
 
-                        <Sider  width={300} style={{minHeight: '100vh'}}>
+                        <Sider  width={'20vw'} style={{height: '100vh', overflow: 'auto', left: 0,position: 'fixed'}}  >
                                 <Button
                                     onClick={this.newNoteBtnClick}
-                                    type="primary" block>{this.state.addingNote ? 'Cancella' : 'Nuova Nota'}</Button>
+                                    type='primary' style={{backgroundColor: '#008394', borderBlock: 'none'}}  block>{this.state.addingNote ? 'Cancella' : 'Nuova Nota'}</Button>
 
                             { this.state.addingNote?
                                 <div>
@@ -63,7 +63,7 @@ class SidebarComponent extends React.Component {
                             }
                             <Menu theme="dark"  mode="inline">
 
-                        <List>
+                        <List >
                         {
                             notes.map((_note, _index) => {
                                 return(
@@ -73,7 +73,7 @@ class SidebarComponent extends React.Component {
                                             _index={_index}
                                             selectedNoteIndex={selectedNoteIndex}
                                             selectNote={this.selectNote}
-                                            deleteNote={this.deleteNote}>
+                                            deleteNote={this.deleteNote} >
                                         </SidebarItemComponent>
                                         <Divider light={true}></Divider>
                                     </div>

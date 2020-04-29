@@ -19,7 +19,7 @@ class NavbarComponentOut extends React.Component {
         const {classes} = this.props;
         return (
             <div className={classes.root}>
-                <AppBar position="static" style={{ background: '#3f527d' }} >
+                <AppBar position="static" style={{ background: '#006974' }} >
                     <Toolbar>
                         <Typography  variant="h6" className={classes.title}>
                             Mynotes

@@ -9,14 +9,14 @@ const styles = theme => ({
         paddingLeft: theme.spacing(4),
     },
     newNoteBtn: {
-        width: '20%',
+        width: '100%',
         height: '10%',
         borderBottom: '1px solid black',
         borderRadius: '0px',
         backgroundColor: '#ffda5a',
         color: 'white',
         '&:hover': {
-            backgroundColor: '#88a2ce'
+            backgroundColor: '#8889ce'
         }
     },
     sidebarContainer: {
@@ -41,7 +41,7 @@ const styles = theme => ({
     },
     newNoteSubmitBtn: {
         width: '100%',
-        backgroundColor: '#28787c',
+        backgroundColor: '#33c9dc',
         borderRadius: '0px',
         color: 'white'
     },
