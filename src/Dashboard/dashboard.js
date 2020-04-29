@@ -2,10 +2,23 @@ import React from 'react';
 import SidebarComponent from "../sidebar/sidebar";
 import EditorComponent from "../editor/editor";
 import styles from "./styles";
-import './styles.css';
-import './logo.svg';
-
+import '../editor/styles.css';
+import 'antd/dist/antd.css';
+import '../editor/styles.css';
+import { Layout, Menu, Breadcrumb } from 'antd';
+import {
+    DesktopOutlined,
+    PieChartOutlined,
+    FileOutlined,
+    TeamOutlined,
+    UserOutlined,
+} from '@ant-design/icons';
 import NavbarComponentOut from "../Navbar/navbarout";
+
+const { Header, Content, Footer, Sider } = Layout;
+const { SubMenu } = Menu;
+
+
 
 const firebase = require('firebase');
 
@@ -40,15 +53,12 @@ class dashboardComponent extends React.Component {
                     {
 
                         this.state.selectedNote ?
-
-
                             <EditorComponent selectedNote={this.state.selectedNote}
                                              selectedNoteIndex={this.state.selectedNoteIndex}
                                              notes={this.state.notes}
-                                             noteUpdate={this.noteUpdate}></EditorComponent> :
-                            <div>
+                                             noteUpdate={this.noteUpdate}></EditorComponent> : null
 
-                            </div>
+
 
                     }
                 </div>
@@ -139,3 +149,5 @@ class dashboardComponent extends React.Component {
 }
 
 export default dashboardComponent;
+
+

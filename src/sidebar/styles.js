@@ -1,3 +1,4 @@
+
 const styles = theme => ({
     root: {
         width: '100%',
@@ -8,11 +9,11 @@ const styles = theme => ({
         paddingLeft: theme.spacing(4),
     },
     newNoteBtn: {
-        width: '18%',
+        width: '20%',
         height: '10%',
         borderBottom: '1px solid black',
         borderRadius: '0px',
-        backgroundColor: '#09197d',
+        backgroundColor: '#ffda5a',
         color: 'white',
         '&:hover': {
             backgroundColor: '#88a2ce'
@@ -23,7 +24,9 @@ const styles = theme => ({
         width: '300px',
         height: '100%',
         boxSizing: 'border-box',
-        float: 'left'
+        float: 'left',
+
+
     },
     newNoteInput: {
         width: '100%',
@@ -42,10 +45,11 @@ const styles = theme => ({
         borderRadius: '0px',
         color: 'white'
     },
-    jumbotroncontainer: {
-        height: '23%',
 
+    placeholdercolor : {
+        color: 'white'
     }
+
 });
 
 export default styles;

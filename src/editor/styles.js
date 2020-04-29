@@ -11,24 +11,27 @@ const styles = theme => ({
         height: '50px',
         boxSizing: 'border-box',
         border: 'none',
-        padding: '5px',
         fontSize: '24px',
-        width: 'calc(100% - 300px)',
+        width: '100%',
         backgroundColor: '#3f527d',
         color: 'white',
         paddingLeft: '50px'
     },
     editIcon: {
         position: 'absolute',
-        left: '310px',
-        top: '75px',
+        left: '352px',
+        top: '155px',
         color: 'white',
         width: '10',
         height: '10'
     },
     editorContainer: {
-        height: '1000px',
-        boxSizing: 'border-box'
+        fullwidth:'100%',
+        marginTop:'0px',
+        marginRight:'0px',
+        boxSizing: 'border-box',
+        height: '100vh',
+
     }
 });
 
