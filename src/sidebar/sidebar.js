@@ -6,10 +6,10 @@ import { Divider } from '@material-ui/core';
 import SidebarItemComponent from "../sidebarItem/sidebaritem";
 import 'antd/dist/antd.css';
 import './styles.css';
-import { Layout, Menu, Breadcrumb, Button } from 'antd';
+import { Layout, Menu, Button } from 'antd';
 
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+
+
 
 class SidebarComponent extends React.Component {
     constructor() {
@@ -60,7 +60,7 @@ class SidebarComponent extends React.Component {
                                             selectNote={this.selectNote}
                                             deleteNote={this.deleteNote} >
                                         </SidebarItemComponent>
-                                        <Divider light={true}></Divider>
+                                        <Divider light={true}/>
                                     </div>
                                 )
                             })

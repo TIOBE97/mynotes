@@ -14,7 +14,7 @@ const styles = theme => ({
         fontSize: '24px',
         font: '#ffffff',
         width: '100%',
-        backgroundColor: '#008394',
+        backgroundColor: '#263238',
         color: 'white',
         paddingLeft: '50px'
     },

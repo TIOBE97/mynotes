@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 
 const firebase = require("firebase");
 
+
 class LoginComponent extends React.Component {
 
     constructor() {
@@ -31,30 +32,30 @@ class LoginComponent extends React.Component {
             <div>
                 <main className={classes.main} >
                     <CssBaseline/>
-                    <Paper className={classes.paper} >
-                        <Typography component="h1" variant="h5">
-                            Log In!
-                        </Typography>
-                        <form onSubmit={(e) => this.submitLogin(e)} className={classes.form}>
-                            <FormControl required fullWidth margin='normal'>
-                                <InputLabel htmlFor='login-email-input'>Inserisci la tua Email</InputLabel>
-                                <Input autoComplete='email' autoFocus onChange={(e) => this.userTyping('email', e)} id='login-email-input'></Input>
-                            </FormControl>
-                            <FormControl required fullWidth margin='normal'>
-                                <InputLabel htmlFor='login-password-input'>Inserisci la tua Password</InputLabel>
-                                <Input autoComplete="current-password" type="password" onChange={(e) => this.userTyping('password', e)} id='login-password-input'></Input>
-                            </FormControl>
-                            <Button type='submit' fullWidth variant='contained' style={{ background: '#263238', color: 'white' }} className={classes.submit}>Log In</Button>
-                        </form>
-                        { this.state.serverError ?
-                            <Typography className={classes.errorText} component='h5' variant='h6'>
-                                Email o Password non corrette
-                            </Typography> :
-                            null
-                        }
-                        <h5 className={classes.noAccountHeader}>Non hai un Account?</h5>
-                        <Link className={classes.signUpLink} to='/signup'>Iscriviti!</Link>
-                    </Paper>
+                        <Paper className={classes.paper} >
+                            <Typography component="h1" variant="h5">
+                                Log In!
+                            </Typography>
+                            <form onSubmit={(e) => this.submitLogin(e)} className={classes.form}>
+                                <FormControl required fullWidth margin='normal'>
+                                    <InputLabel htmlFor='login-email-input'>Inserisci la tua Email</InputLabel>
+                                    <Input autoComplete='email' autoFocus onChange={(e) => this.userTyping('email', e)} id='login-email-input'></Input>
+                                </FormControl>
+                                <FormControl required fullWidth margin='normal'>
+                                    <InputLabel htmlFor='login-password-input'>Inserisci la tua Password</InputLabel>
+                                    <Input autoComplete="current-password" type="password" onChange={(e) => this.userTyping('password', e)} id='login-password-input'></Input>
+                                </FormControl>
+                                <Button type='submit' fullWidth variant='contained' style={{ background: '#263238', color: 'white' }} className={classes.submit}>Log In</Button>
+                            </form>
+                            { this.state.serverError ?
+                                <Typography className={classes.errorText} component='h5' variant='h6'>
+                                    Email o Password non corrette
+                                </Typography> :
+                                null
+                            }
+                            <h5 className={classes.noAccountHeader}>Non hai un Account?</h5>
+                            <Link className={classes.signUpLink} to='/signup'>Iscriviti!</Link>
+                        </Paper>
                 </main>
             </div>
         );
@@ -74,6 +75,7 @@ class LoginComponent extends React.Component {
                 break;
         }
     }
+
 
     submitLogin = async (e) => {
         e.preventDefault(); //previene il refreshing della pagina ogni volta che si inserisce qualcosa nel form

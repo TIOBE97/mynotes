@@ -1,7 +1,6 @@
 import React from 'react';
 import SidebarComponent from "../sidebar/sidebar";
 import EditorComponent from "../editor/editor";
-import styles from "./styles";
 import '../editor/styles.css';
 import 'antd/dist/antd.css';
 import '../editor/styles.css';
@@ -31,13 +30,13 @@ class dashboardComponent extends React.Component {
 
             return(
                 <div className="app-container">
-                    <NavbarComponentOut></NavbarComponentOut>
+                    <NavbarComponentOut/>
                     <SidebarComponent history={this.props.history}
                                       selectedNoteIndex={this.state.selectedNoteIndex}
                                       notes={this.state.notes}
                                       deleteNote={this.deleteNote}
                                       selectNote={this.selectNote}
-                                      newNote={this.newNote}></SidebarComponent>
+                                      newNote={this.newNote}/>
 
 
                     {
@@ -46,7 +45,7 @@ class dashboardComponent extends React.Component {
                             <EditorComponent selectedNote={this.state.selectedNote}
                                              selectedNoteIndex={this.state.selectedNoteIndex}
                                              notes={this.state.notes}
-                                             noteUpdate={this.noteUpdate}></EditorComponent> : null
+                                             noteUpdate={this.noteUpdate}/> : null
 
 
 
