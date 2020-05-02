@@ -30,7 +30,7 @@ const styles = theme => ({
     logInLink: {
         width: '100%',
         textDecoration: 'none',
-        color: '#006974',
+        color: '#263238',
         fontWeight: 'bolder'
     },
     errorText: {

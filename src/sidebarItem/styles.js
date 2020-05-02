@@ -4,7 +4,7 @@ const styles = theme => ({
     },
     textSection: {
         maxWidth: '85%',
-        color: '#33c9dc',
+        color: '#ffffff',
 
     },
     deleteIcon: {

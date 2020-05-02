@@ -68,7 +68,6 @@ class EditorComponent extends React.Component {
                                 <Breadcrumb.Item> Editor della nota:</Breadcrumb.Item>
                             </Breadcrumb>
                             <div className="site-layout-background" style={{padding: 24, minHeight: 500}}>
-                                <BorderColorIcon className={classes.editIcon}/>
                                 <input
                                     className={classes.titleInput}
                                     placeholder='Titolo...'

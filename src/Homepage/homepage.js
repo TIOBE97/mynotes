@@ -1,59 +1,74 @@
 import React from 'react';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Image from './bgimage.jpg';
+import {IconButton} from "@material-ui/core";
+import Footer from "../Footer/Footer";
 
-import 'antd/dist/antd.css';
-import './styles.css';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import {
-    DesktopOutlined,
-    PieChartOutlined,
-    FileOutlined,
-    TeamOutlined,
-    UserOutlined,
-} from '@ant-design/icons';
 
-const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
 
-class homepageComponent extends React.Component {
-    state = {
-        collapsed: false,
-    };
+const useStyles = makeStyles((theme) => ({
 
-    onCollapse = collapsed => {
-        console.log(collapsed);
-        this.setState({ collapsed });
-    };
+    heroContent: {
+        backgroundColor: theme.palette.background.paper,
+        height: '80vh',
+    },
+    heroButtons: {
+        marginTop: theme.spacing(4),
+    },
+    footer: {
+        backgroundColor: '#333',
+        padding: theme.spacing(2),
+    },
+}));
 
-    render() {
-        return (
-            <Layout style={{ minHeight: '100vh' }}>
-                <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-                    <div className="logo" />
-                    <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-                        <Menu.Item key="1">
-                            <PieChartOutlined />
-                            <span>Option 1</span>
-                        </Menu.Item>.
 
-                    </Menu>
-                </Sider>
-                <Layout className="site-layout">
-                    <Header className="site-layout-background" style={{ padding: 0 }} />
-                    <Content style={{ margin: '0 16px' }}>
-                        <Breadcrumb style={{ margin: '16px 0' }}>
-                            <Breadcrumb.Item>User</Breadcrumb.Item>
-                            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-                        </Breadcrumb>
-                        <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                            Bill is a cat.
+export default function homepageComponent() {
+
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const classes = useStyles();
+
+    return (
+        <React.Fragment>
+            <CssBaseline />
+            <div>
+            <main >
+                <div className={classes.heroContent} style={{backgroundImage: `url(${Image})`, backgroundSize: "cover", backgroundPosition: 'center 40%'}} >
+                    <Container maxWidth="sm">
+                        <Typography component="h1" variant="h2" align="center" style={{color: '#ffffff'}} gutterBottom>
+                            <br/>
+                            <br/>
+                            Benvenuto su Mynotes
+                        </Typography>
+                        <Typography variant="h5" align="center" style={{color: '#ffffff'}} paragraph>
+
+                            Gestisci di tutto, dai grandi progetti ai momenti personali.
+                            <br/>
+                            Cattura idee e ispirazioni in note e immagini.
+                            <br/>
+                            Non perdere mai traccia di attività e scadenze.
+                        </Typography>
+                        <div className={classes.heroButtons}>
+                            <Grid container spacing={2} justify="center">
+                                <Grid item>
+                                    <Button variant="contained" style={{ background: '#263238', color: 'white' }} href={'/login'}>
+                                        Per iniziare clicca qui
+                                    </Button>
+                                </Grid>
+                            </Grid>
                         </div>
-                    </Content>
-                    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-                </Layout>
-            </Layout>
-        );
-    }
+                    </Container>
+                </div>
+
+            </main>
+            <Footer/>
+            </div>
+        </React.Fragment>
+    );
 }
-
-
-export default homepageComponent;

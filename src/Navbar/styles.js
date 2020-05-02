@@ -1,4 +1,7 @@
 const styles = theme => ({
+    icon: {
+        marginRight: theme.spacing(2),
+    },
     root: {
         flexGrow: 1,
     },

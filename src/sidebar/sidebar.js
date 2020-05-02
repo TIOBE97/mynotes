@@ -31,11 +31,11 @@ class SidebarComponent extends React.Component {
                         <Sider  width={'20vw'} style={{height: '100vh', overflow: 'auto', left: 0,position: 'fixed'}}  >
                                 <Button
                                     onClick={this.newNoteBtnClick}
-                                    type='primary' style={{backgroundColor: '#008394', borderBlock: 'none'}}  block>{this.state.addingNote ? 'Cancella' : 'Nuova Nota'}</Button>
+                                    type='primary' style={{backgroundColor: '#455a64', border: '0px'}}  block>{this.state.addingNote ? 'Cancella' : 'Nuova Nota'}</Button>
 
                             { this.state.addingNote?
                                 <div>
-                                    <input type='text'
+                                    <input type='text' style={{border: '0px'}}
                                            className={classes.newNoteInput}
                                            placeholder='Inserisci il titolo...'
                                            onKeyUp={(e) => this.updateTitle(e.target.value)}>

@@ -5,6 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import styles from "./styles";
+import NotesIcon from "@material-ui/icons/Notes";
+
 
 class NavbarComponentOut extends React.Component {
     constructor() {
@@ -19,8 +21,9 @@ class NavbarComponentOut extends React.Component {
         const {classes} = this.props;
         return (
             <div className={classes.root}>
-                <AppBar position="static" style={{ background: '#006974' }} >
+                <AppBar position="static" style={{ background: '#263238' }} >
                     <Toolbar>
+                        <NotesIcon className={classes.icon} />
                         <Typography  variant="h6" className={classes.title}>
                             Mynotes
                         </Typography>
