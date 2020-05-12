@@ -37,9 +37,7 @@ class NavbarComponentOut extends React.Component {
         );
     }
 
-    loggedIn = () => {
-        this.setState({logged: !this.state.logged}) ;
-    }
+
     loggedout = async () => {
 
          firebase
