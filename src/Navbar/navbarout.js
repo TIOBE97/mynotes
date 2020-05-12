@@ -7,12 +7,13 @@ import Button from '@material-ui/core/Button';
 import styles from "./styles";
 import NotesIcon from "@material-ui/icons/Notes";
 
+const firebase = require("firebase");
 
 class NavbarComponentOut extends React.Component {
     constructor() {
         super();
         this.state = {
-            logged: false
+            logged: true
         }
     }
     render() {
@@ -27,7 +28,7 @@ class NavbarComponentOut extends React.Component {
                         <Typography  variant="h6" className={classes.title}>
                             Mynotes
                         </Typography>
-                        <Button onClick={this.loggedIn} href='/'  color="inherit">Logout</Button>
+                        <Button onClick={this.loggedout} on href='/'  color="inherit">Logout</Button>
 
 
                     </Toolbar>
@@ -39,6 +40,13 @@ class NavbarComponentOut extends React.Component {
     loggedIn = () => {
         this.setState({logged: !this.state.logged}) ;
     }
+    loggedout = async () => {
+
+         firebase
+            .auth()
+            .signOut()
+
+    };
 }
 
 
