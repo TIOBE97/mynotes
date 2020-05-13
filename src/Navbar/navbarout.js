@@ -38,11 +38,11 @@ class NavbarComponentOut extends React.Component {
     }
 
 
-    loggedout =  () => {
+    loggedout = () => {
 
-         firebase
-            .auth()
+          firebase
             .signOut()
+
 
     };
 }
